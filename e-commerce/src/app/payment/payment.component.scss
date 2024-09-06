@@ -1,0 +1,161 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .payment-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+  
+  .payment-method {
+    flex: 1 1 48%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .payment-method h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+  }
+  
+  /* Responsive Inputs */
+  .card-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-input input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Ensures that padding and border are included in the element's width */
+  }
+  
+  /* MM/YY and CVV Flexbox Layout */
+  .card-exp-cvv {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .card-exp-cvv input {
+    flex: 1;
+  }
+  
+  .payment-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .payment-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  /* Order Summary */
+  .order-summary {
+    margin-top: 2rem;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .order-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .order-summary p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .order-summary h4 {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    color: #28a745;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .payment-options {
+      flex-direction: column;
+    }
+  
+    .payment-method {
+      flex: 1 1 100%;
+    }
+  
+    .payment-container {
+      width: 95%;
+    }
+  
+    /* For Mobile: Make Inputs Full Width */
+    .card-input input,
+    .card-exp-cvv input,
+    select {
+      width: 100%;
+    }
+  
+    .card-exp-cvv {
+      flex-direction: column; /* Stack MM/YY and CVV inputs */
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .payment-method {
+      flex: 1 1 48%;
+    }
+  
+    .card-exp-cvv {
+      flex-direction: row;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .payment-method {
+      flex: 1 1 30%;
+    }
+  }
+  

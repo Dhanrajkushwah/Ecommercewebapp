@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<div class="main-content-inner contact-content container general-page mt-5" data-section-id="contact-template" data-section-type="map">
+    <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-12 mb-4">
+            <div class="row pt-50" data-gutter="60">
+                <div class="col-md-6 rte-page">
+                    <div class="about-content">
+                        For almost 20 years, Merkury Innovations has followed the trends of electronic accessory and tech, keeping us ahead of the curve and providing you affordable products without compromising taste and design. Our wireless sound systems, E-sports gear, and LED home décor help to personalize your atmosphere while our advancements in Smart Home production help make the upgrade to smart living accessible. Whatever the vibe, ambience, or lifestyle, Merkury is committed to making it your very own.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form [formGroup]="contactForm" (ngSubmit)="onCreateCart()" accept-charset="UTF-8" class="contact-form" data-cptcha="true" data-hcaptcha-bound="true">
+                        
+                        <div class="m15"></div>
+                        <label class="fields_label" for="contactFormName">Name</label>
+                        <input type="text" formControlName="name" class="form-control mb-2"  [ngClass]="{'is-invalid': contactForm.controls['name'].errors && ckDep }">
+                        <small *ngIf="contactForm.controls['name'].errors && ckDep" class="text-danger">Enter Your name</small>
+                        <label class="fields_label" for="contactFormEmail">Email</label>
+                        <input type="email" formControlName="email" class="form-control mb-2"  [ngClass]="{'is-invalid': contactForm.controls['email'].errors && ckDep }">
+                        <small *ngIf="contactForm.controls['email'].errors && ckDep" class="text-danger">Enter Your email</small>
+                        <label class="fields_label" for="contactFormPhone">Phone Number</label>
+                        <input type="tel" formControlName="phone" class="form-control mb-2"  pattern="[0-9]*" [ngClass]="{'is-invalid': contactForm.controls['phone'].errors && ckDep }">
+                        <small *ngIf="contactForm.controls['phone'].errors && ckDep" class="text-danger">Enter Your Phone Number</small>
+                        <label class="fields_label" for="contactFormMessage">Message</label>
+                        <textarea formControlName="message" class="form-control mb-2"  [ngClass]="{'is-invalid': contactForm.controls['message'].errors && ckDep }"></textarea>
+                        <small *ngIf="contactForm.controls['message'].errors && ckDep" class="text-danger">Enter Your Phone Number</small>
+                        <br>
+                        <button  class="btn btn-primary mb-2" type="submit" value="Submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

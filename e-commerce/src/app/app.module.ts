@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CreatecartComponent } from './createcart/createcart.component';
+import { PaymentComponent } from './payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { CreatecartComponent } from './createcart/createcart.component';
     RegisterComponent,
     WishlistComponent,
     CreatecartComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,61 @@
+<div class="payment-container">
+    <h2 class="payment-title">Select Payment Method</h2>
+  
+    <div class="payment-options">
+      <!-- ATM/Credit/Debit Cards Section -->
+      <div class="payment-method">
+        <h3>ATM/Credit/Debit Cards</h3>
+        <div class="card-input">
+          <input type="text" placeholder="Card Number" maxlength="16">
+          <input type="text" placeholder="Cardholder Name">
+          <div class="card-exp-cvv">
+            <input type="text" placeholder="MM/YY" maxlength="5">
+            <input type="text" placeholder="CVV" maxlength="3">
+          </div>
+          <button class="payment-btn">Pay with Card</button>
+        </div>
+      </div>
+  
+      <!-- PhonePe Section -->
+      <div class="payment-method">
+        <h3>PhonePe</h3>
+        <button class="payment-btn">Pay with PhonePe</button>
+      </div>
+  
+      <!-- Google Pay Section -->
+      <div class="payment-method">
+        <h3>Google Pay</h3>
+        <button class="payment-btn">Pay with Google Pay</button>
+      </div>
+  
+      <!-- Amazon Pay Section -->
+      <div class="payment-method">
+        <h3>Amazon Pay</h3>
+        <button class="payment-btn">Pay with Amazon Pay</button>
+      </div>
+  
+      <!-- Net Banking Section -->
+      <div class="payment-method">
+        <h3>Net Banking</h3>
+        <select>
+          <option value="">Select Your Bank</option>
+          <option value="sbi">State Bank of India</option>
+          <option value="hdfc">HDFC Bank</option>
+          <option value="icici">ICICI Bank</option>
+          <option value="axis">Axis Bank</option>
+        </select>
+        <button class="payment-btn">Pay with Net Banking</button>
+      </div>
+    </div>
+  
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="cart-subtotal mt-2" *ngIf="cartItems.length > 0">
+        <h3>Subtotal: {{ subtotal | currency }}</h3>
+      </div>
+      <p>Shipping Charge: ₹100.00</p>
+      <h4>Total: ₹{{totalAmount}}</h4>
+    </div>
+  </div>
+  
