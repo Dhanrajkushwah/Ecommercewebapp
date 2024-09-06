@@ -1,0 +1,139 @@
+<div
+    class="surface-overlay px-3 sm:px-7 flex flex-wrap align-items-stretch justify-content-between relative sticky-sidebar">
+    <a pRipple pStyleClass="#nav-2" enterClass="hidden" leaveToClass="hidden"
+        class="p-ripple p-element cursor-pointer flex align-items-center lg:hidden text-700 mr-3"><i
+            class="pi pi-bars text-4xl"></i><span class="p-ink"></span></a>
+    <div id="nav-2"
+        class="surface-overlay hidden lg:flex absolute lg:static left-0 top-100 z-1 shadow-2 lg:shadow-none w-full lg:w-auto py-3 lg:py-0">
+        <ul class="list-none p-0 m-0 flex flex-column lg:flex-row">
+            <li class="flex flex-column lg:flex-row">
+                <a pRipple routerLink="/" enterClass="hidden" leaveToClass="hidden"
+                    class="p-ripple p-element font-medium inline-flex align-items-center cursor-pointer border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base lg:font-base w-full lg:w-auto"><span>About</span><span
+                        class="p-ink" style="height: 89px; width: 89px; top: -35.5px; left: -14.5px;"></span></a>
+
+            </li>
+            <li class="flex flex-column lg:flex-row">
+                <a routerLink="/contact" enterClass="hidden" leaveToClass="hidden"
+                    class="p-ripple p-element font-medium inline-flex align-items-center cursor-pointer border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base lg:font-base w-full lg:w-auto"><span>Contact</span><span
+                        class="p-ink" style="height: 72px; width: 72px; top: -16px; left: 18.3906px;"></span></a>
+                <div
+                    class="surface-overlay shadow-none lg:shadow-2 lg:absolute w-full left-0 top-100 px-6 py-0 lg:py-6 h-10rem lg:h-30rem z-1 hidden">
+                    <div class="border-2 border-dashed surface-border border-round h-full"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="flex align-items-center justify-content-center py-3"><img
+            src="https://merkuryinnovations.com/cdn/shop/files/MerkuryLogo-01_230x@2x.jpg?v=1614718998" alt="Image"
+            height="40"></div>
+    <div class="lg:flex w-full lg:w-auto hidden py-3 lg:py-0">
+        <ul class="list-none p-0 m-0 flex w-full" style="min-height: 30px;">
+            <li class="flex flex-column lg:flex-row" routerLink="/shop">
+                <a enterClass="hidden" leaveToClass="hidden"
+                    class="p-ripple p-element font-medium inline-flex align-items-center cursor-pointer border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base lg:font-base w-full lg:w-auto"><span>Shop</span><span
+                        class="p-ink" style="height: 72px; width: 72px; top: -16px; left: 18.3906px;"></span></a>
+                <div
+                    class="surface-overlay shadow-none lg:shadow-2 lg:absolute w-full left-0 top-100 px-6 py-0 lg:py-6 h-10rem lg:h-30rem z-1 hidden">
+                    <div class="border-2 border-dashed surface-border border-round h-full"></div>
+                </div>
+            </li>
+
+            <li class="flex flex-column lg:flex-row" routerLink="/cart">
+                <a enterClass="hidden" leaveToClass="hidden"
+                   class="p-ripple p-element font-medium inline-flex align-items-center cursor-pointer border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base lg:font-base w-full lg:w-auto">
+                   <span>Cart</span>
+                   <i class="pi pi-shopping-cart" style="position: relative;">
+                     <!-- Badge -->
+                     <span class="p-badge p-badge-info" style="position: absolute; top: -10px; right: -10px;">
+                       {{ cartItems.length }}
+                     </span>
+                   </i>
+                   <span class="p-ink" style="height: 72px; width: 72px; top: -16px; left: 18.3906px;"></span>
+                </a>
+                <div class="surface-overlay shadow-none lg:shadow-2 lg:absolute w-full left-0 top-100 px-6 py-0 lg:py-6 h-10rem lg:h-30rem z-1 hidden">
+                  <div class="border-2 border-dashed surface-border border-round h-full"></div>
+                </div>
+              </li>
+               &nbsp; &nbsp;
+            <li class="flex flex-auto lg:flex-initial justify-content-center"><a pRipple
+                    class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:pr-3 text-700 hover:text-primary"><i
+                        class="pi pi-search text-xl"></i><span class="hidden">Search</span><span
+                        class="p-ink"></span></a></li>
+                        <li class="flex flex-auto lg:flex-initial justify-content-center">
+                            <a pRipple routerLink="/wishlist"
+                               class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:px-3 text-700 hover:text-primary">
+                              <div class="relative">
+                                <i class="pi pi-heart text-xl"></i>&nbsp;
+                                <span class="wishlist-badge">{{ wishItems.length }}</span>
+                              </div>
+                            </a>
+                          </li>
+                          
+                          <li class="flex flex-auto lg:flex-initial justify-content-center" (click)="toggleDropdown($event)">
+                            <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="scalein" leaveToClass="hidden"
+                               leaveActiveClass="fadeout" class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:px-3 text-700 hover:text-primary">
+                              <i class="pi pi-user text-xl"></i>
+                              <span class="hidden">Sign In</span>
+                              <span class="p-ink" style="height: 72px; width: 72px; top: 3px; left: -20.9844px;"></span>
+                            </a>
+                            <div #dropdownMenu class="border-round surface-overlay p-3 shadow-2 absolute right-0 top-100 z-1 w-15rem origin-top" [ngClass]="{'hidden': !isDropdownOpen}">
+                              <ul class="list-none p-0 m-0">
+                                <li><a class="cursor-pointer text-700 hover:text-900 hover:surface-100 border-round flex align-items-center px-3 py-2">
+                                  <i class="pi pi-fw pi-box text-lg mr-2"></i><span>Orders</span></a></li>
+                                <li><a class="cursor-pointer text-700 hover:text-900 hover:surface-100 border-round flex align-items-center px-3 py-2">
+                                  <i class="pi pi-fw pi-heart text-lg mr-2"></i><span>Favorites</span></a></li>
+                                <li><a class="cursor-pointer text-700 hover:text-900 hover:surface-100 border-round flex align-items-center px-3 py-2">
+                                  <i class="pi pi-fw pi-star text-lg mr-2"></i><span>Reviews</span></a></li>
+                                <li routerLink="/login"><a class="cursor-pointer text-700 hover:text-900 hover:surface-100 border-round flex align-items-center px-3 py-2">
+                                  <i class="pi pi-fw pi-home text-lg mr-2"></i><span>Sign In</span></a></li>
+                                <li (click)="logout()"><a class="cursor-pointer text-700 hover:text-900 hover:surface-100 border-round flex align-items-center px-3 py-2">
+                                  <i class="pi pi-fw pi-sign-out text-lg mr-2"></i><span>Sign Out</span></a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          
+            <li class="flex flex-auto lg:flex-initial justify-content-center">
+                <div
+                    class="border-round surface-overlay p-4 shadow-2 absolute right-0 top-100 z-1 w-20rem origin-top hidden">
+                    <span class="text-900 font-medium mb-3 block">My Cart (1 Item)</span>
+                    <div class="flex align-items-center border-bottom-1 surface-border pb-3">
+                        <img src="https://blocks.primeng.org/assets/images/blocks/ecommerce/shoppingcart/shopping-cart-2-2.png"
+                            class="w-4rem flex-shrink-0 shadow-1">
+                        <div class="flex flex-column pl-3"><span class="text-900 font-medium mb-2">Prime
+                                Watch</span><span class="text-600 mb-2">Standard Size</span><span
+                                class="text-primary font-bold">$50.00</span></div>
+                    </div>
+                    <div class="flex pt-3"><button pbutton="" pripple=""
+                            class="p-element p-ripple p-button-outlined mr-2 p-button p-component">View Cart<span
+                                class="p-ink"></span></button><button pbutton="" pripple=""
+                            class="p-element p-ripple ml-2 p-button p-component">Purchase<span
+                                class="p-ink"></span></button></div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</div><p-divider />
+
+<div class="flex w-full lg:w-auto border-y-1 surface-border surface-overlay lg:hidden py-3 lg:py-0">
+    <ul class="list-none p-0 m-0 flex w-full" style="min-height: 30px;">
+        <li class="flex flex-auto lg:flex-initial justify-content-center"><a pRipple
+                class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:pr-3 text-700 hover:text-primary"><i
+                    class="pi pi-search text-xl"></i><span class="hidden">Search</span><span class="p-ink"></span></a>
+        </li>
+        <li class="flex flex-auto lg:flex-initial justify-content-center"><a pRipple
+                class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:px-3 text-700 hover:text-primary"><i
+                    class="pi pi-heart text-xl"></i><span class="hidden">Favorites</span><span class="p-ink"></span></a>
+        </li>
+        <li class="flex flex-auto lg:flex-initial justify-content-center"><a pRipple
+                class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:px-3 text-700 hover:text-primary"><i
+                    class="pi pi-user text-xl"></i><span class="hidden">Sign In</span><span class="p-ink"></span></a>
+        </li>
+        <li class="flex flex-auto lg:flex-initial justify-content-center"><a pRipple
+                class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer lg:pl-3 pr-1 text-700 hover:text-primary"><i
+                    pbadge="" class="pi pi-shopping-cart text-xl"></i><span class="hidden">Cart</span><span
+                    class="p-ink"></span></a></li>
+    </ul>
+</div>

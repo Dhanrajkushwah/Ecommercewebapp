@@ -1,0 +1,18 @@
+<div class="surface-50 px-4 py-8 md:px-6 lg:px-8">
+    <div class="container mt-5">
+      <h2>Wishlist</h2>
+      <div *ngIf="wishItems.length === 0">Your wishlist is empty.</div>
+      <ul *ngIf="wishItems.length > 0">
+        <li *ngFor="let item of wishItems">
+          <img class="zoom-img" [src]="item.imageUrl" [alt]="item.title" width="200">
+          <div class="item-details">
+            <h3>{{ item.title }}</h3>
+            <p class="sku">SKU: {{ item.sku }}</p>   
+            <button class="add-to-cart" (click)="deleteFromWishlist(item.sku)">Delete</button> &nbsp;          
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  

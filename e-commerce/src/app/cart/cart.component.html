@@ -1,0 +1,27 @@
+<div class="surface-50 px-4 py-8 md:px-6 lg:px-8">
+  <div class="container mt-5">
+    <h2>Cart</h2>
+    <div *ngIf="cartItems.length === 0">Your cart is empty.</div>
+    <ul *ngIf="cartItems.length > 0">
+      <li *ngFor="let item of cartItems">
+        <img class="zoom-img" [src]="item.imageUrl" [alt]="item.title" width="200">
+        <div class="item-details">
+          <h3>{{ item.title }}</h3>
+          <p class="price">${{ item.price.toFixed(2) }}</p>
+          <p class="stock-info">In stock! Usually ships within 24 hours.</p>
+          <p class="sku">SKU: {{ item.sku }}</p>
+          <div class="quantity-controls mb-2">
+            <button (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQuantity(item)">+</button>
+          </div>
+          <button class="add-to-cart" (click)="deleteFromCart(item.sku)">Delete</button> &nbsp;
+          <button class="shop-pay" routerLink="/login">Buy with Shop Pay</button>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="cartItems.length > 0">
+      <h3>Subtotal: {{ subtotal | currency }}</h3>
+    </div>
+  </div>
+</div>

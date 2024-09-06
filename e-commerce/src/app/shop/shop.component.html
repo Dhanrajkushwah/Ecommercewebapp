@@ -1,0 +1,114 @@
+<div class="container-fluid mt-5">
+  <div class="row mx-2">
+    <div class="col-sm-12 col-md-3">
+      <h1 class="categories-navigation-item" style="color: #d4651f;">Collections</h1>
+    </div>
+    <div class="col-sm-12 col-md-6 text-center">
+      <h1 class="categories-navigation-item" style="color: #d4651f;">
+        {{filteredProducts.length}} Products found in {{selectedCategory}}
+      </h1>
+    </div>
+    <div class="col-sm-12 col-md-3 text-right">
+      <h1 class="categories-navigation-item" style="color: #d4651f;">
+        <!-- <button routerLink="/createcart" class="btn btn-primary mx-3">Create Cart</button> -->
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Side: Categories Navigation -->
+    <div class="col-sm-12 col-md-3">
+      <div class="sticky-sidebar">
+        <div class="categories-navigation">
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Accessories'}"
+            (click)="selectCategory('Accessories')">
+            ACCESSORIES
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Decor'}"
+            (click)="selectCategory('Decor')">
+            DECOR
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Lifestyle'}"
+            (click)="selectCategory('Lifestyle')">
+            LIFESTYLE
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Mounts'}"
+            (click)="selectCategory('Mounts')">
+            MOUNTS
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Power'}"
+            (click)="selectCategory('Power')">
+            POWER
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'Sound'}"
+            (click)="selectCategory('Sound')">
+            SOUND
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Product Slider -->
+    <div class="col-sm-12 col-md-9">
+      <div class="container p-3">
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 collection-products-wrapper"
+            *ngFor="let product of filteredProducts"
+          >
+            <div class="product-thumb">
+              <div class="product-thumb-inner" (click)="handleAddToCart(product)">
+                <div class="product-thumb-img-wrap">
+                  <img
+                    class="blur-up product-thumb-img lazyautosizes lazyloaded"
+                    [src]="product.imageUrl"
+                    [alt]="product.title"
+                  />
+                </div>
+              </div>
+              <div class="product-thumb-caption">
+                <h5 class="product-thumb-caption-title">{{ product.title }}</h5>
+                <ul class="product-thumb-caption-price">
+                  <li class="product-thumb-caption-price-current">
+                    <span class="money">${{ product.price }}</span> &nbsp;
+                    <span class="money" (click)="wishlist(product)">
+                      <i class="pi pi-heart text-xl"></i>
+                      <span class="hidden">Favorites</span>
+                    </span>
+                  </li>
+                </ul>
+                <!-- Show Add to Cart button based on login status -->
+                <button
+                  class="btn btn-primary mt-2"
+                  *ngIf="isLoggedIn"
+                  (click)="addToCart(product)"
+                >
+                  Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary mt-2"
+                  *ngIf="!isLoggedIn"
+                  (click)="promptLogin()"
+                >
+                  Login to Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

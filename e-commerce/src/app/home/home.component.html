@@ -1,0 +1,176 @@
+<div class="carousel-container">
+    <button class="carousel-arrow left-arrow" (click)="prevSlide()">&#8249;</button>
+
+    <div class="carousel-slider" [style.transform]="getTransform()">
+        <div *ngFor="let image of images" class="carousel-slide">
+            <img [src]="image.src" [alt]="image.description">
+            <p class="carousel-description">{{ image.description }}</p>
+            <button routerLink="/shop">Shop</button>
+        </div>
+    </div>
+    <button class="carousel-arrow right-arrow" (click)="nextSlide()">&#8250;</button>
+</div>
+
+<div class="surface-overlay shadow-none lg:shadow-2  w-full left-0 top-100 pl-8 pr-6 lg:px-6 py-0 lg:py-6">
+    <div class="main-content" id="container" style="margin-left: 0px; margin-top: 0px;">
+
+        <div id="shopify-section-1d9cdaa2-6aa4-47a8-a593-8ed1549e28ed"
+            class="shopify-section index-section index-section--flush shopify-section-default">
+            <div data-section-id="1d9cdaa2-6aa4-47a8-a593-8ed1549e28ed" data-section-type="image-bar-section"
+                class="section-wrapper-bg-1d9cdaa2-6aa4-47a8-a593-8ed1549e28ed" data-section-lighbox="false">
+                <div class="container hero-container gallery-container -no-header" style="padding-bottom: 50px">
+                    <div class="image-row">
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Sound_b_540x.png?v=1698076540" alt="Sound">
+                          <div class="overlay">
+                            <p>Sound</p>
+                          </div>
+                        </div>
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Decor_540x.png?v=1696531227" alt="Decor">
+                          <div class="overlay">
+                            <p>Decor</p>
+                          </div>
+                        </div>
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Power_b_540x.png?v=1698076559" alt="Power">
+                          <div class="overlay">
+                            <p>Power</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="image-row">
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Lifestyle_540x.png?v=1696531227" alt="Lifestyle">
+                          <div class="overlay">
+                            <p>Lifestyle</p>
+                          </div>
+                        </div>
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Accessories_b_2f2e4700-3096-4fa8-b26c-659bf0b9a541_540x.png?v=1698157541" alt="Accessories">
+                          <div class="overlay">
+                            <p>Accessories</p>
+                          </div>
+                        </div>
+                        <div class="image-container">
+                          <img src="https://merkuryinnovations.com/cdn/shop/files/Category-Image-Mounts_540x.png?v=1696531227" alt="Mounts">
+                          <div class="overlay">
+                            <p>Mounts</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                </div>
+
+            </div>
+        </div>
+
+        <div id="shopify-section-8faf8340-9b60-43ed-b9ca-d08590d71769"
+            class="shopify-section index-section index-section--flush shopify-section-default">
+            <div id="shopify-section-handle-8faf8340-9b60-43ed-b9ca-d08590d71769" class="__section-bg-type-handle"
+                data-bg-type="shopify-section-default">
+                <h2 style="justify-content: center;text-align: center;">DISCOVER ALL OF OUR EXCITING BRANDS</h2>
+                <div class="brand-row mt-5">
+                    <div class="brand-container">
+                      <img src="https://merkuryinnovations.com/cdn/shop/files/Brand-Icons-geeni_360x.png?v=1696445883" alt="Geeni">
+                      <div class="brand-overlay">
+                        <p>Geeni</p>
+                      </div>
+                    </div>
+                    <div class="brand-container">
+                      <img src="https://merkuryinnovations.com/cdn/shop/files/Brand-Icons-west-and-arrow_360x.png?v=1696446030" alt="West and Arrow">
+                      <div class="brand-overlay">
+                        <p>West and Arrow</p>
+                      </div>
+                    </div>
+                    <div class="brand-container">
+                      <img src="https://merkuryinnovations.com/cdn/shop/files/Brand-Icons-sudslab_360x.png?v=1696445883" alt="SudsLab">
+                      <div class="brand-overlay">
+                        <p>SudsLab</p>
+                      </div>
+                    </div>
+                    <div class="brand-container">
+                      <img src="https://merkuryinnovations.com/cdn/shop/files/Brand-Icons-merkury-smart_360x.png?v=1696445883" alt="Merkury Smart">
+                      <div class="brand-overlay">
+                        <p>Merkury Smart</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+        <!-- END content_for_index -->
+        <div id="shopify-section-8faf8340-9b60-43ed-b9ca-d08590d71769 justify-content-center"
+        class="shopify-section index-section index-section--flush shopify-section-default">
+        <div id="shopify-section-handle-8faf8340-9b60-43ed-b9ca-d08590d71769" class="__section-bg-type-handle"
+            data-bg-type="shopify-section-default">
+        <div class="grid flex-wrap mx-2 mt-5">
+            <div class="col-12 md:col-6 xl:col-3">
+                <a pStyleClass="@next" enterClass="hidden" leaveToClass="hidden"
+                    class="p-element font-medium text-lg cursor-pointer text-700 block lg:hidden mb-3 select-none">Clothing</a>
+                <ul class="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
+                    <li class="hidden lg:block"><img
+                            src="https://blocks.primeng.org/assets/images/blocks/ecommerce/storenavigation/storenavigation-2-1.png"
+                            alt="Image" height="160" style="border-radius: 12px;"></li>
+                    <li class="font-bold my-5 text-xl text-900 hidden lg:block">Clothing</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Dresses</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Jeans</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Pants</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Skirts</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Sweaters</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Blouses</li>
+                </ul>
+            </div>
+            <div class="col-12 md:col-6 xl:col-3">
+                <a pStyleClass="@next" enterClass="hidden" leaveToClass="hidden"
+                    class="p-element font-medium text-lg cursor-pointer text-700 block lg:hidden mb-3 select-none">Shoes</a>
+                <ul class="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
+                    <li class="hidden lg:block"><img
+                            src="https://blocks.primeng.org/assets/images/blocks/ecommerce/storenavigation/storenavigation-2-2.png"
+                            alt="Image" height="160" style="border-radius: 12px;"></li>
+                    <li class="font-bold my-5 text-xl text-900 hidden lg:block">Shoes</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Athletic</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Boots</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Sneakers</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Flats</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Outdoor</li>
+                </ul>
+            </div>
+            <div class="col-12 md:col-6 xl:col-3">
+                <a pStyleClass="@next" enterClass="hidden" leaveToClass="hidden"
+                    class="p-element font-medium text-lg cursor-pointer text-700 block lg:hidden mb-3 select-none">Accessories</a>
+                <ul class="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
+                    <li class="hidden lg:block"><img
+                            src="https://blocks.primeng.org/assets/images/blocks/ecommerce/storenavigation/storenavigation-2-3.png"
+                            alt="Image" height="160" style="border-radius: 12px;"></li>
+                    <li class="font-bold my-5 text-xl text-900 hidden lg:block">Accessories</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Handbags</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Gloves</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Belts</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Hats</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Earmuffs</li>
+                </ul>
+            </div>
+            <div class="col-12 md:col-6 xl:col-3">
+                <a pStyleClass="@next" enterClass="hidden" leaveToClass="hidden"
+                    class="p-element font-medium text-lg cursor-pointer text-700 block lg:hidden mb-3 select-none">Beauty</a>
+                <ul class="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
+                    <li class="hidden lg:block"><img
+                            src="https://blocks.primeng.org/assets/images/blocks/ecommerce/storenavigation/storenavigation-2-4.png"
+                            alt="Image" height="160" style="border-radius: 12px;"></li>
+                    <li class="font-bold my-5 text-xl text-900 hidden lg:block">Beauty</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Anklets</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Bracelets</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Earrings</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Necklaces</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Rings</li>
+                    <li class="mb-3 cursor-pointer hover:text-900">Wedding</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+  
+</div>

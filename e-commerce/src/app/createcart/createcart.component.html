@@ -1,0 +1,80 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+            class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h1 class="mb-4 pb-2 pb-md-0 mb-md-5">Create Cart Form</h1>
+              <form [formGroup]="cartForm" (ngSubmit)="onCreateCart()">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="title">Title</label>
+                      <input type="text" id="title" formControlName="title" class="form-control form-control-lg" 
+                        [ngClass]="{'is-invalid': cartForm.controls['title'].errors && ckDep }" />
+                      <small *ngIf="cartForm.controls['title'].errors && ckDep" class="text-danger">Enter Your Title</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="price">Price</label>
+                      <input type="text" id="price" formControlName="price" class="form-control form-control-lg" 
+                        [ngClass]="{'is-invalid': cartForm.controls['price'].errors && ckDep }" />
+                      <small *ngIf="cartForm.controls['price'].errors && ckDep" class="text-danger">Enter a valid Price</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="category">Category</label>
+                      <select id="category" formControlName="category" class="form-control form-control-lg"
+                        [ngClass]="{'is-invalid': cartForm.controls['category'].errors && ckDep }">
+                        <option value="" disabled>Select Category</option>
+                        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+                      </select>
+                      <small *ngIf="cartForm.controls['category'].errors && ckDep" class="text-danger">Select a Category</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="quantity">Quantity</label>
+                      <input type="text" id="quantity" formControlName="quantity" class="form-control form-control-lg" 
+                        [ngClass]="{'is-invalid': cartForm.controls['quantity'].errors && ckDep }" />
+                      <small *ngIf="cartForm.controls['quantity'].errors && ckDep" class="text-danger">Enter a valid Quantity</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="sku">Sku No.</label>
+                      <input type="text" id="sku" formControlName="sku" class="form-control form-control-lg" 
+                        [ngClass]="{'is-invalid': cartForm.controls['sku'].errors && ckDep }" />
+                      <small *ngIf="cartForm.controls['sku'].errors && ckDep" class="text-danger">Enter Your Sku No.</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="image">Choose Image</label>
+                      <input type="file" id="image" formControlName="image" class="form-control form-control-lg" 
+                        [ngClass]="{'is-invalid': cartForm.controls['image'].errors && ckDep }" (change)="onFileChange($event)" />
+                      <small *ngIf="cartForm.controls['image'].errors && ckDep" class="text-danger">Select an Image</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-2 pt-2">
+                  <input data-mdb-ripple-init class="btn btn-primary" type="submit" value="Submit"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

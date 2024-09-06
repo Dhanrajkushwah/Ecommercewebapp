@@ -1,0 +1,277 @@
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.carousel-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-description {
+  position: absolute;
+  bottom: 70px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-align: center;
+  width: 90%;
+}
+
+.carousel-slide button {
+  position: absolute;
+  bottom: 15px; /* Adjust as needed */
+  color: black;
+  background-color: white; /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem; /* Adjust as needed */
+  transition: background-color 0.3s ease;
+}
+
+.carousel-slide button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-description {
+      font-size: 1em;
+      bottom: 50px;
+  }
+  .carousel-slide button {
+    font-size: 0.9rem; 
+    padding: 8px 16px; 
+    bottom: 10px; 
+  }
+  .carousel-arrow {
+      padding: 5px;
+  }
+
+  .left-arrow, .right-arrow {
+      top: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-description {
+      font-size: 0.8em;
+      bottom: 40px;
+  }
+  .carousel-slide button {
+    font-size: 0.8rem; 
+    padding: 6px 12px; 
+    bottom: 8px; 
+    width: auto; 
+  }
+  .carousel-arrow {
+      padding: 5px;
+  }
+
+  .left-arrow, .right-arrow {
+      top: 35%;
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-container .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2em;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.image-row .image-container {
+  flex: 1 1 30%;
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .image-row .image-container {
+      flex: 1 1 45%;
+      margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-row .image-container {
+      flex: 1 1 100%;
+      margin: 5px 0;
+  }
+}
+
+.brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.brand-container {
+  flex: 1 1 22%;
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.brand-container .brand-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2em;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.brand-container:hover .brand-overlay {
+  opacity: 1;
+}
+.brand-container:hover img {
+  transform: scale(1.1);
+}
+
+.brand-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .brand-container {
+      flex: 1 1 45%;
+      margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-container {
+      flex: 1 1 100%;
+      margin: 5px 0;
+  }
+}
+
+ul.list-none {
+  padding-left: 0;
+}
+
+ul.list-none li {
+  list-style: none;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.md\:col-6 {
+  width: 50%;
+}
+
+.xl\:col-3 {
+  width: 25%;
+}
+
+@media (max-width: 1024px) {
+  .xl\:col-3 {
+      width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .md\:col-6 {
+      width: 100%;
+  }
+}
